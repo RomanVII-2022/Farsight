@@ -87,7 +87,7 @@ class ProductViewSet(viewsets.ModelViewSet):
             # Sending email to subscribed users every time a product is created 
             """ name = serializer.validated_data['name']
             description = serializer.validated_data['description']
-            HandleEmail("New Product Alert: " + name, description, settings.EMAIL_HOST_USER, ['*****@gmail.com']) """
+            HandleEmail("New Product Alert: " + name, description, settings.EMAIL_HOST_USER, ['*****@gmail.com']).start() """
 
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
