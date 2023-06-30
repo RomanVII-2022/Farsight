@@ -33,9 +33,9 @@
 
 ## End Points
 1. ^users/ - must be admin permissions
-2. ^users/(?P<pk> - must be admin permissions
+2. ^users/pk/ - must be admin permissions
 3. ^products/ - must be authenticated or read only permissions
-4. ^products/(?P<pk>[^/.]+)/ - must be owner of prduct or read only
+4. ^products/pk/ - must be owner of prduct or read only
 5. login - basic authentication
 6. logout - basic authentication
 7. api/token/ - token authentication
