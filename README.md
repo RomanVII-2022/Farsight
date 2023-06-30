@@ -1,6 +1,7 @@
 # Product API
 
 ## How to Run The Project
+> Ensure you have postgresql running locally
 1. Clone the project
 2. Create a virtual environment
    
@@ -19,9 +20,24 @@
            python manage.py runserver
 
 ## Run Project Using Docker Compose
-> I have dockerized the project. Use the command:
+> I have dockerized the project.
 
-docker compose up
+1. Make migrations
+
+            docker compose run myapp python manage.py migrate
+
+2. Run docker compose
+
+            docker compose up
 
 
 ## End Points
+1. ^users/ - must be admin permissions
+2. ^users/(?P<pk> - must be admin permissions
+3. ^products/ - must be authenticated or read only permissions
+4. ^products/(?P<pk>[^/.]+)/ - must be owner of prduct or read only
+5. login - basic authentication
+6. logout - basic authentication
+7. api/token/ - token authentication
+8. api/token/refresh/ - token authentication. Refresh access token.
+9. api/token/verify/ - verify if access token is still valid
